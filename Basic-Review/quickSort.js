@@ -8,7 +8,9 @@
 exports.__esModule = true;
 var utils_1 = require("./utils");
 var arr = [3, 5, 1, 6, 4, 7, 2];
+console.time();
 console.log(sort(arr, 0, arr.length - 1));
+console.timeEnd();
 function sort(arr, left, right) {
     var index;
     if (arr.length > 1) {
