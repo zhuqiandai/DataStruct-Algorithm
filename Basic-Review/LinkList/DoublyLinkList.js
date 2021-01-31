@@ -63,6 +63,35 @@ var DoublyLinkList = /** @class */ (function (_super) {
         }
         return false;
     };
+    DoublyLinkList.prototype.removeAt = function (index) {
+        if (index >= 0 && index <= this.count) {
+            var current = this.head;
+            if (index === 0) {
+                this.head = current.next;
+                if (this.count === 1) {
+                    this.tail = undefined;
+                }
+                else {
+                    this.head.prev = undefined;
+                }
+            }
+            else if (index === this.count) {
+                current = this.tail;
+                this.tail = current.prev;
+                this.tail.next = undefined;
+            }
+            else {
+                current = this.getElementAt(index);
+                current.prev.next = current.next;
+                current.next.prev = current.prev;
+                current.prev = undefined;
+                current.next = undefined;
+            }
+            this.count--;
+            return true;
+        }
+        return false;
+    };
     return DoublyLinkList;
 }(LinkList_1["default"]));
 var DoublyLinkNode = /** @class */ (function (_super) {
@@ -79,4 +108,5 @@ doublyList.insert(3, 0);
 doublyList.insert(4, 0);
 doublyList.insert(5, 1);
 doublyList.insert(6, 2);
+doublyList.removeAt(1);
 console.log(doublyList);
