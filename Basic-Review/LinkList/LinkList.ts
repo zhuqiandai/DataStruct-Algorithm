@@ -93,6 +93,24 @@ class LinkList {
       currnet = currnet.next
     }
   }
+
+  size() {
+    return this.count
+  }
+
+  toString() {
+    if (this.head === null) {
+      return ''
+    }
+    let objString = `${this.head.element}`
+    let current = this.head.next
+    for (let i = 1; i < this.size() && current !== null; i++) {
+      objString = `${objString}, ${current.element}`
+      current = current.next
+    }
+
+    return objString
+  }
 }
 
 const link = new LinkList()
@@ -102,7 +120,5 @@ link.push(2)
 link.push(1)
 
 link.insert(5, 1)
-
-console.log(link.indexOf(1))
 
 export default LinkList

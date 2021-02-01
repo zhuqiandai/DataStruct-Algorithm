@@ -11,6 +11,7 @@
  */
 
 import LinkList from './LinkList'
+import LinkNode from './LinkNode'
 
 const link = new LinkList()
 
@@ -19,20 +20,22 @@ link.push(2)
 link.push(3)
 link.push(4)
 link.push(5)
+link.push(6)
+function middleNode(head) {
+  // 快慢指针
 
-reverseList(link.head)
+  let slow = head
+  let fast = head
 
-// 1->2->3->4->5->NULL
-function reverseList(head) {
-  let prev = null
-  let curr = head
-  while (curr) {
-    const next = curr.next
-    curr.next = prev
-    prev = curr
-    curr = next
+  while (fast.next) {
+    slow = slow.next
+    if (fast.next.next) {
+      fast = fast.next.next
+    } else {
+      fast = fast.next
+    }
   }
-  return prev
+  return slow
 }
 
-console.log(link)
+console.log(middleNode(link.head))

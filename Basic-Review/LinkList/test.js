@@ -18,16 +18,20 @@ link.push(2);
 link.push(3);
 link.push(4);
 link.push(5);
-reverseList(link.head);
-function reverseList(head) {
-    var prev = null;
-    var current = head;
-    while (current) {
-        var next = current.next;
-        current.next = prev;
-        prev = current;
-        current = next;
+link.push(6);
+function middleNode(head) {
+    // 快慢指针
+    var slow = head;
+    var fast = head;
+    while (fast.next) {
+        slow = slow.next;
+        if (fast.next.next) {
+            fast = fast.next.next;
+        }
+        else {
+            fast = fast.next;
+        }
     }
-    return prev;
+    return slow;
 }
-console.log(link);
+console.log(middleNode(link.head));
