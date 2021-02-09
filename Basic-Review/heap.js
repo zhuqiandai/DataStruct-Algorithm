@@ -7,10 +7,10 @@ var utils_1 = require("./utils");
 var arr = [2, 7, 26, 25, 19, 17, 1, 90, 3, 36];
 var heap = [];
 function getLeft(index) {
-    return 2 * index + 1;
+    return 2 * index + 1
 }
 function getRight(index) {
-    return 2 * index + 2;
+    return 2 * index + 2
 }
 function getParent(index) {
     if (index === 0)
