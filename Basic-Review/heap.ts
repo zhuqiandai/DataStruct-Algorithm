@@ -16,7 +16,6 @@ function getParent(index: number) {
   if (index === 0) return undefined
   return Math.floor((index - 1) / 2)
 }
-
 /**
  * 插入创建堆
  * @param ele 插入的元素

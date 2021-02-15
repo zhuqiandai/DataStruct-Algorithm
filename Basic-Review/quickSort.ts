@@ -30,8 +30,8 @@ function sort(arr, left, right) {
 
 function partition(arr, left, right) {
   const pivot = arr[Math.floor((left + right) / 2)]
-  let i = left
   let j = right
+  let i = left
 
   while (i <= j) {
     while (arr[i] < pivot) {
