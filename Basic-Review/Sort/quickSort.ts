@@ -5,7 +5,7 @@
  *  3. 递归
  */
 
-import { swap } from './utils'
+import { swap } from '../utils'
 
 const arr = [3, 5, 1, 6, 4, 7, 2]
 

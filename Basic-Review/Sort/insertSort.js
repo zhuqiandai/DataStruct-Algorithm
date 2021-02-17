@@ -10,14 +10,15 @@ function insertSort(arr, length) {
     var key;
     for (left = 1; left < length; ++left) {
         key = arr[left];
-        console.log(key);
         right = left - 1;
         while (right >= 0 && arr[right] > key) {
+            // 前面已经排好序，所以只需要比较 arr[right]和key
             arr[right + 1] = arr[right];
             right--;
         }
+        console.log(key);
         arr[right + 1] = key;
     }
     return arr;
 }
-console.log(insertSort(arr, 7));
+insertSort(arr, 7);
